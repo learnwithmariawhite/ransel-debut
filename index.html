@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ransel's 18th Debut</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap');
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a192f; /* Deep Navy Blue */
+            color: #e0e0e0; /* Light grey / Off-white for text */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(200, 200, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(200, 200, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(173, 216, 230, 0.05) 2px, transparent 2px); /* Subtle star-like effect */
+            background-size: 50px 50px, 70px 70px, 30px 30px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(19, 41, 75, 0.8); /* Slightly lighter navy, semi-transparent */
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(173, 216, 230, 0.3); /* Soft silver/sapphire glow */
+            text-align: center;
+            position: relative; /* For pseudo-elements if needed for gears/roses */
+        }
+
+        /* Subtle Gear Motif for corners (optional) */
+        .container::before, .container::after {
+            content: '⚙️'; /* Gear emoji or SVG */
+            font-size: 2rem;
+            opacity: 0.2;
+            position: absolute;
+            color: #C0C0C0; /* Silver */
+        }
+        .container::before { top: 15px; left: 15px; }
+        .container::after { bottom: 15px; right: 15px; transform: rotate(90deg); }
+
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            color: #FFFFFF; /* White */
+            margin-bottom: 10px;
+            text-shadow: 0 0 8px #C0C0C0, 0 0 12px #0F52BA; /* Silver and Sapphire glow */
+        }
+
+        .debutante-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            color: #0F52BA; /* Sapphire Blue */
+            margin: 0;
+            line-height: 1;
+            text-shadow: 0 0 5px #FFFFFF, 0 0 10px #C0C0C0;
+        }
+        
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: #E0E0E0;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .ransel-photo {
+            width: 200px; /* Adjust as needed */
+            height: auto;
+            border-radius: 50%; /* Circular photo */
+            border: 5px solid #C0C0C0; /* Silver border */
+            box-shadow: 0 0 15px #0F52BA; /* Sapphire glow */
+            margin: 20px auto;
+            display: block;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ADD8E6; /* Light Blue / Silverish */
+            margin-top: 30px;
+            border-bottom: 1px solid #0F52BA;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #D0D0D0; /* Lighter text for readability */
+            margin-bottom: 15px;
+            padding: 0 10px; /* Add some padding for narrower screens */
+        }
+        
+        .event-details strong {
+            color: #FFFFFF; /* White for emphasis */
+        }
+
+        .buttons-container {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column; /* Stack buttons on mobile */
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px; /* Pill shape */
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            min-width: 220px; /* Ensure buttons have a decent width */
+        }
+
+        .btn-rsvp {
+            background-color: #0F52BA; /* Sapphire Blue */
+            color: white;
+            border-color: #0F52BA;
+        }
+
+        .btn-rsvp:hover {
+            background-color: #0d4399; /* Darker Sapphire */
+            box-shadow: 0 0 15px #C0C0C0;
+        }
+
+        .btn-donate {
+            background-color: #C0C0C0; /* Silver */
+            color: #0a192f; /* Navy Blue text for contrast */
+            border-color: #C0C0C0;
+        }
+
+        .btn-donate:hover {
+            background-color: #a9a9a9; /* Darker Silver */
+            box-shadow: 0 0 15px #0F52BA;
+        }
+        
+        .donation-info {
+            background-color: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #0F52BA;
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #A0A0A0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .header-title {
+                font-size: 2.2em;
+            }
+            .debutante-name {
+                font-size: 3em;
+            }
+            .subtitle {
+                font-size: 1.5em;
+            }
+            .ransel-photo {
+                width: 150px;
+            }
+            p {
+                font-size: 1em;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 1em;
+                min-width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header-title">A Night Among the Stars</h1>
+        <p>You're joyfully invited to celebrate a milestone as bright as the stars! Join us for an unforgettable evening as we honor</p>
+        
+        <div class="debutante-name">Ransel</div>
+        <p class="subtitle">on her 18th Birthday Debut</p>
+
+        <!-- MAKE SURE you have ransel_photo.jpg in the same folder, or change the src path -->
+        <img src="ransel_photo.jpg" alt="Ransel" class="ransel-photo">
+
+        <p class="event-details">
+            Mark your calendars for a night of elegance, dreams, and celebration.
+            <br><br>
+            <strong>Date:</strong> Saturday, September 27, 2025<br>
+            <strong>Time:</strong> 5:30 PM <br>
+            <strong>Venue:</strong> Oasis Convention Centre <br>
+            1036 Lakeshore Rd E, Mississauga, ON L5E 1E4 <br>
+            <strong>Dress Code:</strong> Please Come Dressed in White
+        </p>
+        <p>We can't wait to share this special night with you!</p>
+
+        <div class="buttons-container">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScPV0JdXyT7Cybi80_jllfAgmFQ3VvF9xsiBpek6EzyPmodfg/viewform?usp=dialog" target="_blank" class="btn btn-rsvp">RSVP Here</a>
+        </div>
+
+        <div class="donation-info">
+            <h2>A Gift Towards Her Future Dreams</h2>
+            <p>Your presence at Ransel's debut is truly the most cherished gift. For 18 years, we've watched her grow, and now, as she steps into adulthood, she has bright aspirations for her future.</p>
+            <p>Ransel is passionate about launching a career in real estate and has her sights set on becoming a licensed agent. She also dreams of combining this with her interest in aviation mechanics and her love for working on cars – a unique and ambitious path!</p>
+            <p>To support these dreams, particularly her immediate goal of obtaining her Real Estate License in North York (which involves $10,300 in school and book fees), we've set up a GoFundMe page.</p>
+            <p>In lieu of traditional debut gifts, if you feel moved to contribute, a donation towards her education fund would be an incredible way to invest in her journey and help her build the future she envisions. Any amount raised beyond the licensing fees will go towards other essential educational expenses.</p>
+            <p>This support would mean the world to Ransel as she takes these exciting first steps into her professional life. Thank you for considering this way to celebrate her milestone.</p>
+        </div>
+
+        <div class="buttons-container">
+             <!-- !!! IMPORTANT: REPLACE #YOUR_GOFUNDME_LINK_HERE with Ransel's actual GoFundMe page link !!! -->
+            <a href="https://gofund.me/566ac65d" target="_blank" class="btn btn-donate">Support Ransel's Future</a>
+        </div>
+
+        <p class="footer-text">With love and anticipation, <br> The Placer Family</p>
+
+    </div>
+</body>
+</html>
